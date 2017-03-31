@@ -46,7 +46,7 @@ class thread_pool {
         for (int i = 0 ; i < _thread_num ; i++) {
             printf("start one thread...\n");
             std::thread *thread = new std::thread(&thread_run<T>, &_task_queue);
-            thread->detach();
+            // thread->detach();
             _workers.push_back(std::move(std::shared_ptr<std::thread>(thread)));
         }
     }
